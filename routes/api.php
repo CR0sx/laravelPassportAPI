@@ -24,6 +24,6 @@ Route::post('user/login', [UserController::class, 'login']);
 Route::post('user/register', [UserController::class, 'register']);
 
 Route::group(['middleware' => 'auth:api'], function(){
-    Route::get('user/details', [UserController::class, 'details'])->middleware('auth:api');
-    Route::post('user/logout', [UserController::class, 'logout'])->middleware('auth:api');    
+    Route::get('user/details', [UserController::class, 'details']);
+    Route::post('user/logout', [UserController::class, 'logout']);  
 }); 
